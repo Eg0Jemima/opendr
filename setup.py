@@ -51,7 +51,6 @@ def autogen_opengl_sources():
     import os
     sources = [ os.path.join(context_dir, x) for x in ['_constants.py', '_functions.pyx'] ]
     if not all([ os.path.exists(x) for x in sources ]):
-        print "Autogenerating opengl sources"
         from contexts import autogen
         autogen.main()
         for x in sources:
